@@ -1,15 +1,15 @@
-CC=g++
-CFLAGS=-c -Wall -Wextra -ansi -pedantic
+CC=gcc
+CFLAGS=-Wall -Wextra -ansi -pedantic
 LDFLAGS=
-SOURCES=main.cpp
-OBJECTS=$(SOURCES:.cpp=.o)
+SOURCES=main.c
+OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=wc
 
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS) 
 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
 	rm -f $(EXECUTABLE) *.o
