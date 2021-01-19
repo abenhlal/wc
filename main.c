@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdint.h>
+#include <inttypes.h>
 
 #define BUFFER_SIZE (16 * 1024)
 
@@ -39,7 +41,7 @@ int main(int argc, char* argv[]) {
     lineCounter += lineCount(buffer, buffer + bytesRead);
   }
 
-  printf("lines:%llu bytes:%llu file:%s\n", ++lineCounter, totalRead, argv[1]);
+  printf("lines:%"PRIu64" bytes:%"PRIu64" file:%s\n", ++lineCounter, totalRead, argv[1]);
   fclose(pFile);
   return EXIT_SUCCESS;
 }

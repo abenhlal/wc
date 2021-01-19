@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -ansi -pedantic
+CFLAGS=-Wall -Wextra -ansi -pedantic -std=c99
 LDFLAGS=
 SOURCES=main.c
 OBJECTS=$(SOURCES:.c=.o)
